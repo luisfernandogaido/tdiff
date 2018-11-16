@@ -4,13 +4,13 @@ import (
 	"errors"
 	"fmt"
 	"log"
-	"os"
 	"strings"
 	"time"
 )
 
 func main() {
-	ret, err := calcula(os.Args[1:]...)
+	//ret, err := calcula(os.Args[1:]...)
+	ret, err := calcula("15:04", "13:00")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -38,11 +38,11 @@ func calcula(pars ...string) (string, error) {
 }
 
 func calcDur(p1, p2 string) (time.Duration, error) {
-	ini, err := analisaDataHora(p1)
+	ini, err := analisaDataHora(p2)
 	if err != nil {
 		return 0, err
 	}
-	fim, err := analisaDataHora(p2)
+	fim, err := analisaDataHora(p1)
 	if err != nil {
 		return 0, err
 	}
