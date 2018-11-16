@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	//ret, err := calcula(os.Args[1:]...)
 	ret, err := calcula("15:04", "13:00")
 	if err != nil {
 		log.Fatal(err)
