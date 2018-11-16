@@ -4,12 +4,13 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"os"
 	"strings"
 	"time"
 )
 
 func main() {
-	ret, err := calcula("15:04", "13:00")
+	ret, err := calcula(os.Args[1:]...)
 	if err != nil {
 		log.Fatal(err)
 	}
